@@ -83,3 +83,9 @@ Met de informatie uit het metadata-bestand kan je de RNA bestanden aan de juiste
 - Open de cart (bovenaan) en kies **Download Cart** > **Manifest**. En daarna ook **Metadata** (knop iets verder naar rechts, naast Remove Cart).
 
 
+
+## Eerste onderzoek van de data
+
+Ik ben zelf in de data gedoken van de cases om uit te zoeken hoe bruikbaar het is. Niet bij alle gevallen zijn alledrie de relevante kolommen ingevuld, maar als er ook maar één waarde "Positive" is weten we dat dat in ieder geval geen _triple negative_ is. Ook heb ik de cases gematcht met de RNA bestanden. Het resultaat staat in de Excel file "Cases.xlsx".
+
+Hieruit komt dat we van 863 cases weten dat het _niet_ triple negative is, van 116 dat het _wel_ triple negative is, en van 118 weten we het niet. RNA files hebben we van bijna alle cases, op 3 na (waarvan 1 een onbekende is). Zo houden we dus **977** cases over met bruikbare data. Net iets minder dan de gevraagde 1000, maar valt me nog alles mee.
