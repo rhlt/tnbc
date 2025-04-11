@@ -115,7 +115,7 @@ We will apply techniques such as resampling or adjusting class weights to addres
 ---
 
 ### **11. Optional Sections**  
-Risk mitigation plans: We will focus on basic explainability techniques (e.g., feature importance, model coefficients) if time permits. If the timeline becomes constrained, we may prioritize model optimization over additional explainability measures. In case of significant delays due to data processing or model performance issues, we will prioritize model simplification or use pre-trained models to demonstrate proof of concept.F
+Risk mitigation plans: We will focus on basic explainability techniques (e.g., feature importance, model coefficients) if time permits. If the timeline becomes constrained, we may prioritize model optimization over additional explainability measures. In case of significant delays due to data processing or model performance issues, we will prioritize model simplification or use pre-trained models to demonstrate proof of concept.
 
 ---
 
