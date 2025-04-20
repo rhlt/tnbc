@@ -89,3 +89,37 @@ Met de informatie uit het metadata-bestand kan je de RNA bestanden aan de juiste
 Ik ben zelf in de data gedoken van de cases om uit te zoeken hoe bruikbaar het is. Niet bij alle gevallen zijn alledrie de relevante kolommen ingevuld, maar als er ook maar één waarde "Positive" is weten we dat dat in ieder geval geen _triple negative_ is. Ook heb ik de cases gematcht met de RNA bestanden. Het resultaat staat in de Excel file "Cases.xlsx".
 
 Hieruit komt dat we van 863 cases weten dat het _niet_ triple negative is, van 116 dat het _wel_ triple negative is, en van 118 weten we het niet. RNA files hebben we van bijna alle cases, op 3 na (waarvan 1 niet triple negative, 1 wel en ook 1 onbekende). Zo houden we dus **977** cases over met bruikbare data. Net iets minder dan de gevraagde 1000, maar valt me nog alles mee.
+
+
+## Verder onderzoek van de data
+
+Een relevant onderdeel van de data is de 'clinical data'. Daarin staan 210 kolommen met diversiteit van data over de patient.
+Bijvoorbeeld, geslacht, leeftijd, overlijden, diagnose, locatie.
+
+De data is te vinden in file '8162d394-8b64-4da2-9f5b-d164c54b9608'.
+Het gaat ons helpen wanneer we de data koppelen en filteren.
+
+Daarnaast.
+Ik heb geprobeerd beeld te krijgen bij de kolommen in 'cases'.
+Bijvoorbeeld de eerste rij '6E7D5EC6-A469-467C-B748-237353C23416'.
+Bestand '253aa5dc-9853-462a-9bcd-c2e44817833b.rna_seq.augmented_star_gene_counts.tsv'
+
+'''
+er_status_by_ihc	pr_status_by_ihc	her2_status_by_ihc
+Positive		    Positive		    Negative
+'''
+
+Als ik aan AI vraag hoe 'er', 'pr' en 'her2' te bepalen zijn is het antwoord;
+   - ESR1 for estrogen receptor (ER)
+   - PGR for progesterone receptor (PR)
+   - ERBB2 for HER2
+
+Als ik voor voorgenoemde data ga kijken, zijn alle drie aanwezig.
+
+Hoe komt 'her2' op negative? Is mijn beeld, gedachtengang hierboven, verkeerd?
+
+Tot slot, het inlezen van de cohort data (de bron van 'cases') heb ik gezet in
+\data\cohortdata.ipynb
+
+
+
