@@ -83,17 +83,3 @@ Bestand '253aa5dc-9853-462a-9bcd-c2e44817833b.rna_seq.augmented_star_gene_counts
 er_status_by_ihc	pr_status_by_ihc	her2_status_by_ihc
 Positive		    Positive		    Negative
 '''
-
-Als ik aan AI vraag hoe 'er', 'pr' en 'her2' te bepalen zijn is het antwoord;
-   - ESR1 for estrogen receptor (ER)
-   - PGR for progesterone receptor (PR)
-   - ERBB2 for HER2
-
-Als ik voor voorgenoemde data ga kijken, zijn alle drie aanwezig.
-
-Hoe komt 'her2' op negative? Is mijn beeld, gedachtengang hierboven, verkeerd?
-
-- *Kortweg, ja: zo zwart wit is het dus niet. Je kan niet 1 op 1 proteine data (info over welke stofjes aanwezig zijn in een tumor) uit RNA data (de genen) halen, dat maakt het nou juist zo lastig en is waarom we er een AI model bij halen.*
-
-
-
