@@ -10,10 +10,11 @@ The Jupyter Notebook in this folder will classify and filter the raw clinical da
 - Add the matched files to the clinical dataframe, dropping cases where no RNA Seq file is available;
 - Save the resulting dataframe to a new file **clinical.csv** in the Data folder (this will not be included in the repository);
 
-***Next step:*** Other Jupyter Notebooks now have all necessary data to work. The generated clinical data file (with TNBC classification and a link to the relevant RNA Seq file) can be loaded with the following code:
+***Next step:*** Other Jupyter Notebooks now have all necessary data to work. The generated clinical data file (with TNBC classification and a link to the relevant RNA Seq file for every case) can be loaded with the following code:
 
 ```py
-df = pd.read_csv('../Data/clinical.csv')
+dataPath = '../Data'
+df = pd.read_csv(os.path.join(dataPath, 'clinical.csv'))
 ```
 
 
