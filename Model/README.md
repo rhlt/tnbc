@@ -31,3 +31,4 @@ While the models perform similarly, logistic regression shows slightly weaker pe
 
 ## Suggestions for improvement ***[TODO IF TIME PERMITS]***
 - Apply SMOTE to remove the imbalance **(moet hier want SMOTE moet alleen op de testdata, dus na de split!)**
+- Train more (different types of) models, e.g. XGBoost
