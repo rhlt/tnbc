@@ -14,7 +14,8 @@ The generated file with the selected features can be loaded with the following c
 
 ```py
 dataPath = '../Data'
-df = pd.read_csv(os.path.join(dataPath, 'patient_genes_[variant].csv')) # replace [variant] with the variant to use as input (literature, statistical, automated)
+df = pd.read_csv(os.path.join(dataPath, 'patient_genes_[variant].csv'))
+# replace [variant] with the variant to use as input (literature, statistical, automated)
 ```
 
 ***Next step:*** Jupyter Notebooks that train different models based on the selected features can be found in the **[Model](../Model)** folder that lives next to this Features folder.
