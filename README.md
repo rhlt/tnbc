@@ -15,15 +15,15 @@
 
 Below is a list of steps of the workflow that we have implemented. All steps (except Documentation) have a specific folder that contains one or more Jupyter notebooks where this step happens. Every notebook will import some existing data from the *Data* folder, work on it, and then export the result to a new file in the *Data* folder. These results are not committed to the repository. For every step, different variants may exist, for example for developing different models or selecting different features.
 
-1. **Data acquisition**: Case data from the TCGA-BRCA project should go in the **Data** folder. See the README in that folder for instructions on how to aquire the data;
-2. **Data preprocessing**: Cleaning, filtering, and classification (label generation) of the data is done in the **Preprocessing** folder. This also links the clinical data to the correct RNA Seq files.
-3. **Feature selection**: Features (genes) will be selected based on literature and other methods in the **Features** folder.
-4. **Model development**: Different models are trained in the **Model** folder.
-5. **Model evaluation**: Visualizations of evaluation metrics are generated in the **Evaluation** folder.
-6. **Interpretability and fairness analysis**: ***TODO*** (**Analysis** folder)
+1. **[Data acquisition](./Data)**: Case data from the TCGA-BRCA project should go in the **Data** folder. See the README in that folder for instructions on how to aquire the data;
+2. **[Data preprocessing](./Preprocessing)**: Cleaning, filtering, and classification (label generation) of the data is done in the **Preprocessing** folder. This also links the clinical data to the correct RNA Seq files.
+3. **[Feature selection](./Features)**: Features (genes) will be selected based on literature and other methods in the **Features** folder.
+4. **[Model development](./Model)**: Different models are trained in the **Model** folder.
+5. **[Model evaluation](./Evaluation)**: Visualizations of evaluation metrics are generated in the **Evaluation** folder.
+6. **[Interpretability and fairness analysis](./Analysis)**: ***TODO*** (**Analysis** folder)
 7. **Documentation and reporting**: The final report, as well as the original proposal, can be found in the top folder (here).
 
-
+(Not sure what to do with the **[Supplement](./Supplement)** folder yet...)
 
 ***(NB: Hier moet dus nog meer definitiefs geschreven worden, voor nu is het hieronder een soort kladblok)***
 

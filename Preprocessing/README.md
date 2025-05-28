@@ -17,7 +17,7 @@ dataPath = '../Data'
 df = pd.read_csv(os.path.join(dataPath, 'clinical.csv'))
 ```
 
-***Next step:*** Jupyter Notebooks that parse the clinical data, select features using different methods, and link them from all RNA Seq files, can be found in the **Features** folder that lives next to this Preprocessing folder.
+***Next step:*** Jupyter Notebooks that parse the clinical data, select features using different methods, and link them from all RNA Seq files, can be found in the **[Features](../Features)** folder that lives next to this Preprocessing folder.
 
 
 ## Key findings

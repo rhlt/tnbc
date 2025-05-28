@@ -1,11 +1,6 @@
-# Basic implementations of ML models
+# 4. Implementations of Machine Learning models
 
-## Prerequisites
 
-- Python 3.8+
-- Required packages
-  - Pandas
-  - scikit-learn
 - patient_genes.csv: Run the following [notebook](Preparation\PrepareData.ipynb) if the file does not exist in tnbc/Data/
 
 ### Notebook contents [[#notebook]](Model\Model.ipynb)

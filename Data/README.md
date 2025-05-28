@@ -21,7 +21,7 @@ The metadata file allows linking the downloaded RNA files to the cases found in 
 }
 ````
 
-***Next step:*** A Jupyter Notebook that parses both the downloaded metadata and clinical data to generate these links and determine TNBC status of all cases, can be found in the **Preprocessing** folder that lives next to this Data folder.
+***Next step:*** A Jupyter Notebook that parses both the downloaded metadata and clinical data to generate these links and determine TNBC status of all cases, can be found in the **[Preprocessing](../Preprocessing)** folder that lives next to this Data folder.
 
 
 ## Obtaining the data from the GDC Data Portal
