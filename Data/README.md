@@ -1,4 +1,4 @@
-# Obtaining data
+# 1. Obtaining data
 
 This folder contains two files: `gdc_manifest.2025-04-01.222006.txt` and `metadata.cart.2025-04-01.json`.
 
