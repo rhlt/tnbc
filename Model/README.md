@@ -1,7 +1,6 @@
 # 4. Implementations of Machine Learning models
 
-
-- patient_genes.csv: Run the following [notebook](Preparation\PrepareData.ipynb) if the file does not exist in tnbc/Data/
+***Prerequisite:** Files with selected features named **patient_genes_[variant].csv** must be generated as described in **[Features](../Features)**.*
 
 ### Notebook contents [[#notebook]](Model\Model.ipynb)
 

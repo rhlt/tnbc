@@ -1,6 +1,6 @@
 # 2. Preprocessing: Classification and Filtering of clinical data
 
-***Prerequisite:** Data files (Clinical and RNA sequencing) must have been downloaded as described in **Data**.*
+***Prerequisite:** Data files (Clinical and RNA sequencing) must have been downloaded as described in **[Data](../Data)**.*
 
 The Jupyter Notebook in this folder will classify and filter the raw clinical data with the following process:
 

@@ -1,6 +1,6 @@
 # 3. Feature Selection: selecting genes using different methods
 
-***Prerequisite:** Preprocessed clinical data must be available in **clinical.csv** as described in **Preprocessing**.*
+***Prerequisite:** Preprocessed clinical data must be available in **clinical.csv** as described in **[Preprocessing](../Preprocessing)**.*
 
 The Jupyter Notebooks in this folder will extract the the selected features from the RNA Seq files and combine them with the labeled clinical data with the following process:
 
