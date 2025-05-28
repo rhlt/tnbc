@@ -29,3 +29,8 @@ Based on literature ***[WAAR KWAM DEZE VANDAAN]***, a list of 20 genes was selec
 Using statistical analysis, a ***similar/different*** list was found **(VINCE)** .....
 
 With automated methods such as PCA **(RUBEN)** ......
+
+## Suggestions for improvement ***[TODO IF TIME PERMITS]***
+- Apply SMOTE to remove the imbalance
+- Different feature-sets
+- Normalize data; in the TCGA-BRCA data the column 'stranded_first' is used. Values range from 0 (missing) to over 30782951
