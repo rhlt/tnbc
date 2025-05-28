@@ -1,5 +1,15 @@
 # Detection of Triple Negative Breast Cancer from RNA sequencing data using Machine Learning
 
+(introduction)
+
+## Requirements
+
+- Python 3.8+
+- Jupyter Notebook 7.2+
+- _Required packages_:
+  - Pandas
+  - scikit-learn
+- Data from the TCGA-BRCA project
 
 ## Workflow
 
