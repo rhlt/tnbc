@@ -20,7 +20,12 @@ df = pd.read_csv(os.path.join(dataPath, 'patient_genes_[variant].csv')) # replac
 ***Next step:*** Jupyter Notebooks that train different models based on the selected features can be found in the **Model** folder that lives next to this Features folder.
 
 
-## Key findings
-From to the available clinical data, 116 can be determined as triple negative (TNBC), as the three relevant  columns are 'Negative'. A further 863 cases can be determined as _not_ triple negative (meaning at least one 'Positive' value in the appropriate columns). This leaves 118 indeterminable cases.
+## Key findings ***[TODO]***
 
-RNA Sequencing files are missing for 3 cases (1 TNBC, 1 non-TNBC, 1 indeterminable), leaving a total of **977** cases with usable data.
+The RNA Seq files contain gene expression data for tens of thousands of genes, each of which has different expression values. Based on ***[WAT PRECIES]*** we have learned that **stranded_first** is the most appropriate value to use.
+
+Based on literature ***[WAAR KWAM DEZE VANDAAN]***, a list of 20 genes was selected for initially: TBC1D9, GATA3, SLC16A6, ESR1, INPP4B, SLC44A4, ANXA9, AGR2, MCCC2, TSPAN1, STBD1, MLPH, CACNA2D2, RARA, STARD3, PPP1R14C, SFRS13B, LDHB, MFGE8, PSAT1.
+
+Using statistical analysis, a ***similar/different*** list was found **(VINCE)** .....
+
+With automated methods such as PCA **(RUBEN)** ......

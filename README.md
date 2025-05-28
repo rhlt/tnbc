@@ -3,7 +3,7 @@
 
 ## Workflow
 
-Below is a list of steps of the workflow that we have implemented. All steps (except Documentation) have a specific folder that contains one or more Jupyter notebooks where this step happens. Every notebook will import some existing data from the *Data* folder, work on it, and then export the result to a new file in the *Data* folder. These results are not committed to the repository. For every step, different variants may exist, for example for developing different models or different features.
+Below is a list of steps of the workflow that we have implemented. All steps (except Documentation) have a specific folder that contains one or more Jupyter notebooks where this step happens. Every notebook will import some existing data from the *Data* folder, work on it, and then export the result to a new file in the *Data* folder. These results are not committed to the repository. For every step, different variants may exist, for example for developing different models or selecting different features.
 
 1. **Data acquisition**: Case data from the TCGA-BRCA project should go in the **Data** folder. See the README in that folder for instructions on how to aquire the data;
 2. **Data preprocessing**: Cleaning, filtering, and classification (label generation) of the data is done in the **Preprocessing** folder. This also links the clinical data to the correct RNA Seq files.
