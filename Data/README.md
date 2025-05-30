@@ -1,4 +1,4 @@
-# Obtaining data
+# 1. Obtaining data
 
 This folder contains two files: `gdc_manifest.2025-04-01.222006.txt` and `metadata.cart.2025-04-01.json`.
 
@@ -21,7 +21,7 @@ The metadata file allows linking the downloaded RNA files to the cases found in 
 }
 ````
 
-***Next step:*** A Jupyter Notebook that parses both the downloaded metadata and clinical data to generate these links and determine TNBC status of all cases, can be found in the **Classification** folder that lives next to this Data folder.
+***Next step:*** A Jupyter Notebook that parses both the downloaded metadata and clinical data to generate these links and determine TNBC status of all cases, can be found in the **[Preprocessing](../Preprocessing)** folder that lives next to this Data folder.
 
 
 ## Obtaining the data from the GDC Data Portal
