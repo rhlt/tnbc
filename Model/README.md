@@ -23,7 +23,7 @@ A summarization of the cross-validation results is displayed at the end of the n
 
 ## Key findings
 
-The three models trained (logistic regression, random forest and SVM) perform very similarly. Overall, performance is moderate, which is likely caused by the limited size and relative imbalance of the dataset, with only a small number of positive TNBC samples.
+When using literature-based features based on the key findings of the previous step, the three models trained (logistic regression, random forest and SVM) perform very similarly. Overall, performance is moderate or at best slightly better than moderate, which is likely caused by the limited size and relative imbalance of the dataset, with only a small number of positive TNBC samples.
 
 Interestingly, perfect recall is seen on the initial split. However, this disappears in cross-validation as well as when changing the initial random state. This seems to be an artifact of the random state and limited positive sample size, rather than model quality or training issues.
 
