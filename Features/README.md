@@ -37,3 +37,14 @@ This suggests that the selection of genes based on literature is the best way to
 ## Suggestions for improvement ***[TODO IF TIME PERMITS]***
 - Different feature-sets
 - Normalize data; in the TCGA-BRCA data the column 'stranded_first' is used. Values range from 0 (missing) to over 30782951
+
+Kevin:
+See code below (aka complete notebook scaled)
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+dfPatientGenes['TBC1D9_Scaled'] = scaler.fit_transform(dfPatientGenes[['TBC1D9']])
+<other genes>
+
+dfPatientGenes.drop(columns=['TBC1D9'], inplace=True)
+<other genes>
