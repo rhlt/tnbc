@@ -21,7 +21,12 @@ In set GSE124648 and GSE10893 I couldn't differentiate what the TNBC samples are
 Also, for GPL16686 I modified the URL to download as textfile:
 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?mode=raw&is_datatable=true&acc=GPL16686&id=17306&db=GeoDb_blob94
 
-With the four sets implemented, there are 304 TNBC and 86 nTNBC
+Also, GSE61723, the GPL used does not show gene names, it refers to a website which does not show data.
+
+With the four sets implemented, there are 302 TNBC and 77 nTNBC
+
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?mode=raw&is_datatable=true&acc=GPL1390&id=11300&db=GeoDb_blob92
+data&acc=&id=&db=
 
 | GEO datasets                                                              | GPL        | Upload year | Update year | TNBC sample size | Normal sample size |
 | :--------:                                                                | :--------: | :---------: | :---------: | :--------------: | :----------------: |
@@ -33,9 +38,23 @@ With the four sets implemented, there are 304 TNBC and 86 nTNBC
 | GSE113865                                                                 | GPL10558                                                                  | 2018        | 2023        | 3                | 3                  |
 | [GSE53752](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE53752)   | [GPL7264](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL7264)     | 2014        | 2014        | 51               | 25                 |
 | GSE124648                                                                 | GPL96                                                                     | 2019        | 2019        | 108              | 10                 |
-| GSE10893                                                                  | GPL1390                                                                   | 2008        | 2017        | 31               | 8                  |
+| [GSE10893](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE10893)   | [GPL1390](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL1390)     | 2008        | 2017        | 31               | 8                  |
 
+normalbreast = 8
 
 ![Platform](./Images/geo_001.png)
 ![DataSet](./Images/geo_002.png)
+
+
+
+
+
+
+GSM372559	normalbreast-BR00-0572A
+GSM372560	normalbreast-BR00-0587A
+GSM372561	normalbreast-BR06-0222A
+GSM372562	normalbreast-BR06-0182A
+GSM372563	normalbreast-BR05-0865A
+
+
 
