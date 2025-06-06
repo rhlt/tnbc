@@ -27,6 +27,23 @@ Below is a list of steps of the workflow that we have implemented. All steps (ex
 
 ***(NB: Hier moet dus nog meer definitiefs geschreven worden, voor nu is het hieronder een soort kladblok)***
 
+
+
+# Literature
+Artificial Intelligence with Python, 2nd edition. Packt Publishing Ltd, ISBN 978-1-83921-953-5
+Data Science - An Introduction to Statistics and Machine Learning, Springer, ISBN 978-3-662-67881-7
+Data Science Concepts and Techniques with Applications, Springer, ISBN 978-3-031-17441-4
+Data Analytics - A Theoretical and Practical View from the EDISON project, Springer, ISBN 978-3-031-39128-6
+
+ # HIER --->  ['KRT43P', 'MALAT1', 'TRDC', 'TRGC1', 'TRGC2']
+
+ # 'GZMB', 'GZMB', UNIVARITEA
+
+### Iteration: 	100 / 300, Confirmed: 	226, Tentative: 	43, Rejected: 	17
+### Iteration: 	200 / 300, Confirmed: 	235, Tentative: 	28, Rejected: 	23
+### Iteration: 	300 / 300, Confirmed: 	238, Tentative: 	15, Rejected: 	23
+
+
 ## Introductie
 
 In het GDC Data Portal staat data van het TCGA project over borstkanker (TCGA-BRCA). Hier vindt je onder andere RNA sequencing van meer dan duizend cases. Ook kan je gegevens over de patiënten en hun diagnose vinden. (Dit was een voorbeeld in de les.)
