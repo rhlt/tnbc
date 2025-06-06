@@ -35,9 +35,13 @@ Data Science - An Introduction to Statistics and Machine Learning, Springer, ISB
 Data Science Concepts and Techniques with Applications, Springer, ISBN 978-3-031-17441-4
 Data Analytics - A Theoretical and Practical View from the EDISON project, Springer, ISBN 978-3-031-39128-6
 
+ # HIER --->  ['KRT43P', 'MALAT1', 'TRDC', 'TRGC1', 'TRGC2']
 
+ # 'GZMB', 'GZMB', UNIVARITEA
 
-
+### Iteration: 	100 / 300, Confirmed: 	226, Tentative: 	43, Rejected: 	17
+### Iteration: 	200 / 300, Confirmed: 	235, Tentative: 	28, Rejected: 	23
+### Iteration: 	300 / 300, Confirmed: 	238, Tentative: 	15, Rejected: 	23
 
 
 ## Introductie
