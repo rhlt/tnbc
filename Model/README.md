@@ -2,14 +2,35 @@
 
 ***Prerequisite:** Files with selected features named **patient_genes_[variant].csv** must be generated as described in **[Features](../Features)**.*
 
-These notebooks contain the initial setup of the Machine Learning models based on the following algorithms:
+The notebooks in this folder contain the Machine Learning models based on the following algorithms:
 
 - Logistic Regression
 - Support Vector Machines (SVM)
 - Random Forest
 
-The dataset used is *patient_genes_literature.csv*, though this can easily be swapped with a different feature set.
-General data helper functions are declared in the DataHelpers notebook. This includes splitting the dataset into 80% training data and 20% testing data, as well as functionality for K-fold cross valid ation and the exporting of various evaluation metrics. All splits are stratified to account for the imbalance present in the dataset.
+The models are trained using various patient_genes files located in the /Data folder.
+Each model notebook allows easy switching between different feature sets at the top of the notebook.
+
+```python
+# Model[Algorithm].ipynb
+# To view all available feature set variants, use:
+# FeatureVariant.print_info()
+
+# Or refer to the FeatureVariant class in ../DataHelpers.ipynb
+GENE_FILE_VARIANT = FeatureVariant.LITERATURE
+```
+
+**NOTE**:
+The feature variants are mapped to the generated **pateient_genes_[variant].csv** files. As noted previously, ensure that the corresponding patient_genes files have been genarated before training or evaluating the model.
+
+General data helper functions are declared in **DataHelpers.ipynb**.
+This includes but is not limited to:
+
+- Splitting the dataset into 80% training data and 20% testing data
+- K-fold cross validation
+- Exporting of various evaluation metrics
+
+All splits are stratified to account for the imbalance present in the dataset.
 
 The notebooks for the respective models train the type of model they are named after (as listed above) and use the helper functions to perform the actual data splitting, five-fold cross-validation, and preliminary evaluation.
 
@@ -29,78 +50,73 @@ Interestingly, perfect recall is seen on the initial split. However, this disapp
 While the models perform similarly, logistic regression shows slightly weaker performance compared to the others, particularly in precision and F1.
 
 ### After applying SMOTE
-It seems that SMOTE improves or stabilizes performance in most cases, particularly for Random Forest.
 
-Comparing the models performance, we can see that Random Forest consistently outperforms Logistic Regression and SVM, especially after SMOTE.
+**SMOTE**
+Method to address class imbalance.
+In our case the majority class were cases that did not have TNBC, while the cases with TNBC were the minority class. The minority class significantly had fewer examples. Instead of simply duplicating examples of the minority class, SMOTE creates generates synthetic data, as the former can lead to overfitting.
 
-**TODO**
-Victor: Explain SVM -> Accuracy drops after SMOTE for Literature features.
-What does this mean?
+For the most part, it seems that all models show equal or better accuracy and higher mean CV accuracy when SMOTE is applied except for Logistic Regression's Literature feature set.
+
+Comparing the models performance, we can see that SVM and Random Forest consistently outperforms Logistic Regression, especially after SMOTE.
+As Logistic Regression lags behind slightly, this may suggest that the relationship between features and labels is non-linear to a certain extend which SVM and Random Forest handle better.
+
+Because scores have improved overall after applying SMOTE, this supports the idea that class imbalance was a limiting factor, and SMOTE does help the models learn more generalizable patterns, especially in Random Forest and SVM.
 
 #### Breakdown by model
 
-**Logistic Regression**
+##### Logistic Regression
 
-| Feature Set | SMOTE | Accuracy       | MEAN CV Accuracy  |
-|-------------|-------|----------------|-------------------|
-| Literature  | NO    | 0.93           | 0.9437            |
-| Literature  | YES   | 0.94           | 0.9385:arrow_down:|
-| Research    | NO    | 0.93           | 0.9273            |
-| Research    | YES   | 0.94 :arrow_up:| 0.9333:arrow_down:|
+| Feature Set | SMOTE | Accuracy        | MEAN CV Accuracy  |
+|-------------|-------|-----------------|-------------------|
+| Literature  | NO    | 0.95            | 0.9447            |
+| Literature  | YES   | 0.94:arrow_down:| 0.9443:arrow_down:|
+| Research    | NO    | 0.95            | 0.9386            |
+| Research    | YES   | 0.96:arrow_up:  | 0.9420:arrow_up:  |
 
 **Findings**:
 
-- Literature features perform slightly better in CV without SMOTE.
+- SMOTE does not help with Literature feature set.
+- On the other hand, SMOTE does help with Research feature set.
+- Overall, at worst SMOTE provide a drop in scores for the Literate feature set and at best modest benefit on the Research feature set.
 
-**TODO** Victor: Explain how it's possible that CV performance is worsened
-
-- SMOTE helps a little with Research features but slightly worsens Literature CV performance.
-
-- Overall, SMOTE provide modest benefit.
-
-**SVM**
+##### SVM
 
 | Feature Set | SMOTE | Accuracy         | MEAN CV Accuracy |
 |-------------|-------|------------------|------------------|
-| Literature  | NO    | 0.96             | 0.9263           |
-| Literature  | YES   | 0.94 :arrow_down:| 0.9432 :arrow_up:|
-| Research    | NO    | 0.94             | 0.9273           |
-| Research    | YES   | 0.94             | 0.9321 :arrow_up:|
+| Literature  | NO    | 0.94             | 0.9488           |
+| Literature  | YES   | 0.95 :arrow_up:  | 0.9519 :arrow_up:|
+| Research    | NO    | 0.94             | 0.9427           |
+| Research    | YES   | 0.97 :arrow_up:  | 0.9664 :arrow_up:|
 
 **Findings**:
 
-**TODO**
-Victor: Accuracy drops after SMOTE for Literature features.
-What does this mean?
-- Accuracy drops slightly after SMOTE on Literature features, but CV improves
+- As indicated here below in Random Forest as well, both models are leveraging the improved class balance well.
+- This can be seen in a great boost in accuracy and MEAN CV accuracy scores with SMOTE, especially on Research feature set.
 
-**TODO**
-Victor: Accuracy drops after SMOTE for Literature features.
-What does this mean?
-- Identical scores between Literature and Research without SMOTE.
-
-- SVM benefits moderately from SMOTE, especially in CV.
-
-**Random Forest**
+##### Random Forest
 
 | Feature Set | SMOTE | Accuracy       | MEAN CV Accuracy |
 |-------------|-------|----------------|------------------|
-| Literature  | NO    | 0.94           | 0.9396           |
-| Literature  | YES   | 0.96 :arrow_up:| 0.9635 :arrow_up:|
-| Research    | NO    | 0.95           | 0.9396           |
-| Research    | YES   | 0.96 :arrow_up:| 0.9698 :arrow_up:|
+| Literature  | NO    | 0.93           | 0.9355           |
+| Literature  | YES   | 0.96 :arrow_up:| 0.9681 :arrow_up:|
+| Research    | NO    | 0.95           | 0.9325           |
+| Research    | YES   | 0.97 :arrow_up:| 0.9727 :arrow_up:|
 
 **Findings**:
 
 - Clear indication that SMOTE helps Random Forest across both feature sets.
-- Research features with SMOTE yield the best cross-validation score compared with other models (0.9698).
-- Suggests that Random Forest is robust and can take advantage of synthetic minority samples effectively.
+- Research feature set with SMOTE yield the best cross-validation score compared with other models (0.9727).
+- Suggests that Random Forest is robust and can take advantage of SMOTE-generated synthetic data very well.
 
-**TODO**
-Victor:
-Provide interpretations of the feature sets
-Suggestions for improvents
+### Training on different feature sets
+
+| Model              | BORUTA| EXTRA TREE    | AUTOMATED        | RESEARCH ANOVA   |
+|--------------------|-------|---------------|------------------|------------------|
+| Logistic Regression| 0.9582| 0.9588        | 0.9780           | 0.9524           |
+| SVM                | 0.9727| 0.9675        | 0.9832           | 0.9664           |
+| Random Forest      | 0.9733| 0.9727        | 0.9797           | 0.9704           |
 
 ## Suggestions for improvement ***[TODO IF TIME PERMITS]***
+
 - ~~Apply SMOTE to remove the imbalance **(moet hier want SMOTE moet alleen op de testdata, dus na de split!)**~~
 - Train more (different types of) models, e.g. XGBoost
