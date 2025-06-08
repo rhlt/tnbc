@@ -108,13 +108,19 @@ Because scores have improved overall after applying SMOTE, this supports the ide
 - Research feature set with SMOTE yield the best cross-validation score compared with other models (0.9727).
 - Suggests that Random Forest is robust and can take advantage of SMOTE-generated synthetic data very well.
 
-### Training on different feature sets
+### Training on different feature sets (MEAN CV Accuracy)
 
-| Model              | BORUTA| EXTRA TREE    | AUTOMATED        | RESEARCH ANOVA   |
-|--------------------|-------|---------------|------------------|------------------|
-| Logistic Regression| 0.9582| 0.9588        | 0.9780           | 0.9524           |
-| SVM                | 0.9727| 0.9675        | 0.9832           | 0.9664           |
-| Random Forest      | 0.9733| 0.9727        | 0.9797           | 0.9704           |
+| Model              | SMOTE | BORUTA          | EXTRA TREE      | AUTOMATED        | RESEARCH ANOVA   |
+|--------------------|-------|-----------------|-----------------|------------------|------------------|
+| Logistic Regression| NO    | 0.9447          | 0.9396          | 0.9386           | 0.9355           |
+| Logistic Regression| YES   | 0.9582:arrow_up:| 0.9588:arrow_up:| 0.9780:arrow_up: | 0.9524:arrow_up: |
+| SVM                | NO    | 0.9457          | 0.9478          | 0.9232           | 0.9416           |
+| SVM                | YES   | 0.9727:arrow_up:| 0.9675:arrow_up:| 0.9832:arrow_up: | 0.9664:arrow_up: |
+| Random Forest      | NO    | 0.9457          | 0.9457          | 0.8946           | 0.9427           |
+| Random Forest      | YES   | 0.9733:arrow_up:| 0.9727:arrow_up:| 0.9797:arrow_up: | 0.9704:arrow_up: |
+
+Based on initial evalutions, Random Forest + Automated + SMOTE has the best performance.
+Additionally models without SMOTE should be avoided.
 
 ## Suggestions for improvement ***[TODO IF TIME PERMITS]***
 
