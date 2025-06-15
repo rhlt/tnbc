@@ -44,6 +44,3 @@ normalbreast = 8
 ![Platform](./Images/geo_001.png)
 ![DataSet](./Images/geo_002.png)
 
-
-
-
