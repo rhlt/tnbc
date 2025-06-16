@@ -19,10 +19,9 @@ The models used for training are:
 
 # Literature
 From the literature, 20 genes were marked to have a high association with tnbc. From there those genes were taken and standardized to be then used by the models to see how the model would predict tnbc with those genes.
-
-<img src="/images/literature_general_plot.png">
-<img src="/images/literature_roc_auc_plot.png">
-<img src="/images/literature_cross_validation_plot.png">
+![Platform](./images/literature_general_plot.png)
+![Platform](./images/literature_roc_auc_plot.png)
+![Platform](./images/literature_cross_validation_plot.png)
 
 The plots show that the overall accuracy of the literature features is quite high will all 3 models.
 But since the data is quite unbalanced, this score is quite misleading. Leaning heavily on the not TNBC cases, there is a low number of positive cases. Hench this data is not trust worthy.
@@ -39,14 +38,17 @@ It's quite impressive it got these high results since the data is imbalanced. Bu
 
 Just like the ROC and AUC data, the Cross Validation shows high scores. All the models reaching almost the 95%, with Logistic Regression having the highest with 94.12%. Meaning all the models would be able to produce similair results in practice as with the training/test data.
 
+In conclusion the literature feature selection seems to result in an overall lower Precision to all models, while the ROC and AUC are quite high with the imbalanced data. Combined with the cross validation, the results seem realistic. 
+If this feature selection were to be used, Support Vector Machine would be the best model to utilize.
+
 # Automated
 From the automated method of selecting genes, by using the PCA method, we transform the data and by selecting the most variating data, a new feature set is made. Officially this is not feature selection, but it will automatically help look for variables that impact the data.
 
-<img src="/images/automated_general__plot.png">
-<img src="/images/automated_roc_auc_plot.png">
-<img src="/images/automated_cross_validation_plot.png">
+![Platform](./images/automated_general__plot.png")
+![Platform](./images/automated_roc_auc_plot.png")
+![Platform](./images/automated_cross_validation_plot.png")
 
-The accuracy of the models is pretty high, but Random Forest stands out for having a near 4% drop in performance compared to SVM. 90.31% compared to the others 94.39% and 96.43%, giving it quite the set back. The mostlikely cause is that because of the small pool of data and the lowered number of features created by the PCA. As Random Forest works better with structured data to create desicion trees.
+The accuracy of the models is pretty high, but Random Forest stands out for having a near 4% drop in performance compared to SVM. 90.31% compared to the others 94.39% and 96.43%, giving it quite the set back. The mostlikely cause is that because of the small pool of data and the lowered number of features created by the PCA. As Random Forest works better with structured data to create desicion trees, PCA restructures the original data that cannot be effectively used by the model.
 
 Looking at the Presicion, Recall and F1-score we can see that the Random Forest model isn't compatible with PCA. While the Precision is the highest among the 3 models, the Recall score is very low, scoring 21.74% and the F1-score being 34.48%.
 On the other hand, the Logistic Regression seems to excel with the features coming out of PCA. Mostlikely due to their similairities of finding variables and PCA eliminates high correlation in the data, which benefits Logistic Regression. Resulting in the high scores.
@@ -55,12 +57,14 @@ The ROC and AUC data support the findings above, as you can see the Random Tree 
 
 And the Cross Validation scores confirm the practical correctness of the Logistic Regression, scoring 94.37%.
 
+In conclusion, Logistical Regression is the best model for the automated feature set. Because PCA has a similair algoritm of finding variables to Logistic Regression and PCA eliminates high correlation between the data which also favors Logistic Regression.
+
 # Statistical
 By conduction various checks to the correlation of the genes, features are being selected via statistics. This way the data is as normalized as possible and also have selected the most impactful and variable data.
 
-<img src="/images/statistical_general__plot.png">
-<img src="/images/statistical_roc_auc_plot.png">
-<img src="/images/statistical_cross_validation_plot.png">
+![Platform](./images/statistical_general__plot.png")
+![Platform](./images/statistical_roc_auc_plot.png")
+![Platform](./images/statistical_cross_validation_plot.png")
 
 In terms of Accuracy, all models are very close, with Logistical Regression leading with 95.41%.
 Looking at the Presicion, shares the same closeness as with the Accuracy, being between 74% and 79%. With LR having the highest again. Probably because variation plays a big role in the selection again, just like PCA. As mentioned above it will benefit the model.
@@ -72,3 +76,23 @@ The AUC scores are very high, showing near 100%. Showing that the model can almo
 
 With the Cross Validation data we see that all models seem to be very accurate representations of practical results, being just below 95%. Random Forest being the most accurate representation.
 
+In conclusion this feature set seems to work great with all the models. Having around the same scores seems the models have similair performances when utilizing this feature set.
+Complementing to this is the high Cross Validation scores, estimating the reliability if put into practice.
+
+# BORUTA
+This feature selection method works by identifying relevant existing features and comparing them to randomly generated 'shadow' features. These are randomly generated features, which are then put to a model (usually Random Forest) to determine which features have high relevance.
+
+![Platform](./images/boruta_metrics.svg")
+![Platform](./images/boruta_ROC.svg")
+![Platform](./images/boruta_5fold.svg")
+
+Looking at the Precision data, there are significant differences in performance. With Random Forest having the highest (75.86%), SVM having 70.00% and Logistic Regression having 65.52%. It seems Logistic Regression has trouble with this feature set, with the probable cause being a high correlation in the data.
+
+The Recall scores seem more valuable, meaning all models having a high chance of True Positive capture.
+Random Forest leads with 95.65%, SVM having 82.61% and Logistic Regression having 82.61%.
+Another noticable drop in performance compared to the other models.
+
+Looking at the F1-scores, it follows the same structure where Random Forest scores the highest with 84.62%, SVM following with 79.25% and Logistic Regression with the lowest score of 73.08%.
+
+In conclusion, the BORUTA has some good features usable for the Random Forest model, being caused by the fact that the BUROTA algoritm uses Random Forest to select the most relevant features. Basically preparing the features for a Random Forest model.
+But for the other models the results seem decent as SVM's results are average, but Logistic Regression scores lower due to the lack of features and structure the model excels at.
