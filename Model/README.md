@@ -1,4 +1,4 @@
-# 4. Implementations of Machine Learning models
+# 4. Implementations of Machine Learning models (TODO: Opschonen)
 
 ***Prerequisite:** Files with selected features named **patient_genes_[variant].csv** must be generated as described in **[Features](../Features)**.*
 
@@ -108,21 +108,133 @@ Because scores have improved overall after applying SMOTE, this supports the ide
 - Research feature set with SMOTE yield the best cross-validation score compared with other models (0.9727).
 - Suggests that Random Forest is robust and can take advantage of SMOTE-generated synthetic data very well.
 
-### Training on different feature sets (MEAN CV Accuracy)
+================================================================================================
 
-| Model              | SMOTE | BORUTA          | EXTRA TREE      | AUTOMATED        | RESEARCH ANOVA   |
-|--------------------|-------|-----------------|-----------------|------------------|------------------|
-| Logistic Regression| NO    | 0.9447          | 0.9396          | 0.9386           | 0.9355           |
-| Logistic Regression| YES   | 0.9582:arrow_up:| 0.9588:arrow_up:| 0.9780:arrow_up: | 0.9524:arrow_up: |
-| SVM                | NO    | 0.9457          | 0.9478          | 0.9232           | 0.9416           |
-| SVM                | YES   | 0.9727:arrow_up:| 0.9675:arrow_up:| 0.9832:arrow_up: | 0.9664:arrow_up: |
-| Random Forest      | NO    | 0.9457          | 0.9457          | 0.8946           | 0.9427           |
-| Random Forest      | YES   | 0.9733:arrow_up:| 0.9727:arrow_up:| 0.9797:arrow_up: | 0.9704:arrow_up: |
+### Training on all feature sets (Mean CV Accuracy)
+<!--No matchign green/red arrow pointing down, use inline html instead :) -->
+| Model              | SMOTE | BORUTA                                     | EXTRA TREE                                 | Automated                                   | RESEARCH ANOVA                              | RFE                                         | LASSO                                       | Statistical                                |
+|--------------------|-------|--------------------------------------------|--------------------------------------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|---------------------------------------------|--------------------------------------------|
+| Logistic Regression| NO    | 0.9447                                     | 0.9396                                     | 0.9386                                      | 0.9355                                      | 0.9478                                      | 0.9550                                      | 0.9263                                     |
+| Logistic Regression| YES   | 0.9582 <span style="color: green;">▲</span>| 0.9588 <span style="color: green;">▲</span>| 0.9780 <span style="color: green;">▲</span> | 0.9524 <span style="color: green;">▲</span> | 0.9704 <span style="color: green;">▲</span> | 0.9623 <span style="color: green;">▲</span> | 0.9182 <span style="color: red;">▼</span>  |
+| SVM                | NO    | 0.9457                                     | 0.9478                                     | 0.9232                                      | 0.9416                                      | 0.9488                                      | 0.9509                                      | 0.9406                                     |
+| SVM                | YES   | 0.9727 <span style="color: green;">▲</span>| 0.9675 <span style="color: green;">▲</span>| 0.9832 <span style="color: green;">▲</span> | 0.9664 <span style="color: green;">▲</span> | 0.9768 <span style="color: green;">▲</span> | 0.9739 <span style="color: green;">▲</span> | 0.9217 <span style="color: red;">▼</span>  |
+| Random Forest      | NO    | 0.9457                                     | 0.9457                                     | 0.8946                                      | 0.9427                                      | 0.9488                                      | 0.9468                                      | 0.9457                                     |
+| Random Forest      | YES   | 0.9733 <span style="color: green;">▲</span>| 0.9727 <span style="color: green;">▲</span>| 0.9797 <span style="color: green;">▲</span> | 0.9704 <span style="color: green;">▲</span> | 0.9768 <span style="color: green;">▲</span> | 0.9733 <span style="color: green;">▲</span> | 0.9635 <span style="color: green;">▲</span>|
 
-Based on initial evalutions, Random Forest + Automated + SMOTE has the best performance.
-Additionally models without SMOTE should be avoided.
+#### Training on models (Final selection of feature sets/ Mean CV Accuracy)
+
+| Model              | SMOTE | Literature                                 | RESEARCH                                    | Statistical                                | LASSO                                       | Boruta                                     | Automated                                   | RFE                                         |
+|--------------------|-------|--------------------------------------------|---------------------------------------------|--------------------------------------------|---------------------------------------------|--------------------------------------------|---------------------------------------------|---------------------------------------------|
+| Logistic Regression| NO    | 0.9447                                     | 0.9386                                      | 0.9263                                     | 0.9550                                      | 0.9447                                     | 0.9386                                      | 0.9478                                      |
+| Logistic Regression| YES   | 0.9443 <span style="color: red;">▼</span>  | 0.9420 <span style="color: green;">▲</span> | 0.9182 <span style="color: red;">▼</span>  | 0.9623 <span style="color: green;">▲</span> | 0.9582 <span style="color: green;">▲</span>| 0.9780 <span style="color: green;">▲</span> | 0.9704 <span style="color: green;">▲</span> |
+| SVM                | NO    | 0.9488                                     | 0.9427                                      | 0.9406                                     | 0.9509                                      | 0.9457                                     | 0.9232                                      | 0.9488                                      |
+| SVM                | YES   | 0.9519 <span style="color: green;">▲</span>| 0.9664 <span style="color: green;">▲</span> | 0.9217 <span style="color: red;">▼</span>  | 0.9739 <span style="color: green;">▲</span> | 0.9727 <span style="color: green;">▲</span>| 0.9832 <span style="color: green;">▲</span> | 0.9768 <span style="color: green;">▲</span> |
+| Random Forest      | NO    | 0.9355                                     | 0.9325                                      | 0.9457                                     | 0.9468                                      | 0.9457                                     | 0.8946                                      | 0.9488                                      |
+| Random Forest      | YES   | 0.9681 <span style="color: green;">▲</span>| 0.9727 <span style="color: green;">▲</span> | 0.9635 <span style="color: green;">▲</span>| 0.9733 <span style="color: green;">▲</span> | 0.9733 <span style="color: green;">▲</span>| 0.9797 <span style="color: green;">▲</span> | 0.9768 <span style="color: green;">▲</span> |
+
+### Findings
+
+**SMOTE** is method to address class imbalance.
+In our case the majority class were cases that did not have TNBC, while the cases with TNBC were the minority class. The minority class significantly had fewer examples. Instead of simply duplicating examples of the minority class, SMOTE generates synthetic data, as the former can lead to overfitting.
+
+Accross all models and feature selection methods (except for Statistical in Logistic Regression), SMOTE improves the mean cross-validation accuracy. We can conclude that class imbalance was indeed affecting the model performance and SMOTE is a good strategy for addressing this.
+
+Comparing the models performance, we can see that SVM and Random Forest consistently outperforms Logistic Regression, especially after SMOTE (for the applicable ones).
+As Logistic Regression lags behind slightly, this may suggest that the relationship between features and labels is non-linear to a certain extend which SVM and Random Forest handle better.
+
+Because scores have improved overall after applying SMOTE, this supports the idea that class imbalance was a limiting factor, and SMOTE does help the models learn more generalizable patterns, especially in and SVM and Random Forest.
+
+Based on the above model mean cv scores, all feature sets (except for a few) benefits (greatly) from SMOTE. The following can be concluded for each feature set:
+
+- Literature: Overall performance across models is consistent. Does not benefit from SMOTE for Logistic Regression.
+- Research: Avarage performance compared with the other feature sets. This one sits in the middle. Benefits from SMOTE.
+- Statiscal: Weakest across feature sets. -> Drop or refine?
+- LASSO: Performs very well with SVM and Random Forest.
+- Boruta: Performs well with all models. Added benefit of its interpretability
+- Automated (PCA): Overall best. Benefits extremely well from SMOTE.
+- RFE: Consistent across models. Also benefit of interpretability
+
+Below an overview of the Top 3 performing models and their respective feature sets
+
+| Model                       | 1st                    | 2nd              | 3rd                       |
+|-----------------------------|------------------------|------------------|---------------------------|
+| Logistic Regression         | Automated: **0.9780**  | RFE: **0.9704**  | LASSO: **0.9623**         |
+| SVM                         | Automated: **0.9832**  | RFE: **0.9768**  | LASSO: **0.9739**         |
+| Random Forest               | Automated: **0.9797**  | RFE: **0.9768**  | BORUTA/LASSO: **0.9733**  |
+
+Model validation will be further expanded in the next step as well as validation of the models.
+
+=========================================================================
+
+### Use in presentation
+
+Logistic Regression (without SMOTE)
+| Feature Set | MEAN CV Accuracy |
+|-------------|------------------|
+| Literature  | 0.9447  (3rd)    |
+| Research    | 0.9386  (4th)    |
+| Statistical | 0.9263  (5th)    |
+| LASSO       | 0.9550  (1st)    |
+| Boruta      | 0.9447  (3rd)    |
+| Automated   | 0.9386  (4th)    |
+| RFE         | 0.9478  (2nd)    |
+
+Logistic Regression (wit SMOTE)
+| Feature Set | MEAN CV Accuracy |
+|-------------|------------------|
+| Literature  | 0.9443  (5th)    |
+| Research    | 0.9420  (6th)    |
+| Statistical | 0.9182  (7th)    |
+| LASSO       | 0.9623  (3rd)    |
+| Boruta      | 0.9582  (4th)    |
+| Automated   | 0.9780  (1st)    |
+| RFE         | 0.9704  (2nd)    |
+
+SVM (without SMOTE)
+| Feature Set | MEAN CV Accuracy |
+|-------------|------------------|
+| Literature  | 0.9488  (2nd)    |
+| Research    | 0.9427  (3rd)    |
+| Statistical | 0.9406  (5th)    |
+| LASSO       | 0.9509  (1st)    |
+| Boruta      | 0.9457  (4th)    |
+| Automated   | 0.9232  (6th)    |
+| RFE         | 0.9488  (2nd)    |
+
+SVM (wit SMOTE)
+| Feature Set | MEAN CV Accuracy |
+|-------------|------------------|
+| Literature  | 0.9519  (6th)    |
+| Research    | 0.9664  (5th)    |
+| Statistical | 0.9217  (7th)    |
+| LASSO       | 0.9739  (3rd)    |
+| Boruta      | 0.9727  (4th)    |
+| Automated   | 0.9832  (1st)    |
+| RFE         | 0.9768  (2nd)    |
+
+Random Forest (without SMOTE)
+| Feature Set | MEAN CV Accuracy |
+|-------------|------------------|
+| Literature  | 0.9355  (4th)    |
+| Research    | 0.9325  (5th)    |
+| Statistical | 0.9457  (3rd)    |
+| LASSO       | 0.9468  (2nd)    |
+| Boruta      | 0.9457  (3rd)    |
+| Automated   | 0.8946  (6th)    |
+| RFE         | 0.9488  (1st)    |
+
+Random Forest (wit SMOTE)
+| Feature Set | MEAN CV Accuracy |
+|-------------|------------------|
+| Literature  | 0.9681  (5th)    |
+| Research    | 0.9727  (4th)    |
+| Statistical | 0.9635  (6th)    |
+| LASSO       | 0.9733  (3rd)    |
+| Boruta      | 0.9733  (3rd)    |
+| Automated   | 0.9797  (1st)    |
+| RFE         | 0.9768  (2nd)    |
 
 ## Suggestions for improvement ***[TODO IF TIME PERMITS]***
 
 - ~~Apply SMOTE to remove the imbalance **(moet hier want SMOTE moet alleen op de testdata, dus na de split!)**~~
-- Train more (different types of) models, e.g. XGBoost
+- ~~Train more (different types of) models, e.g. XGBoost~~
