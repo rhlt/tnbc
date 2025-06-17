@@ -96,3 +96,29 @@ Looking at the F1-scores, it follows the same structure where Random Forest scor
 
 In conclusion, the BORUTA has some good features usable for the Random Forest model, being caused by the fact that the BUROTA algoritm uses Random Forest to select the most relevant features. Basically preparing the features for a Random Forest model.
 But for the other models the results seem decent as SVM's results are average, but Logistic Regression scores lower due to the lack of features and structure the model excels at.
+
+# LASSO
+This feature selection, also known as L1 regularization, is an automated feature selection that selects the most relevant features by shrinking the coefficients of less important features to 0, basically removing them from the selection. It simplifies the model, prevents overfitting and improves interperability.
+
+![Platform](./images/lasso_metrics.svg")
+![Platform](./images/lasso_ROC.svg")
+![Platform](./images/lasso_5fold.svg")
+
+Looking at the Precision scores, they mostly score above the 75%, with Logistic Regression leading with 80.00%.
+In contrast for Recall, Random Forest scores the highest with 95.65%, meaning although the accuracy is the lowest, it has the highest rate of True Positive captures. With SVM and Logistic Regression having a tie at 86.96%.
+At the F1-scores, every model scores near each other, with Random Forest having the highest of 84.62%, Logistic Regression having 83.33% and SVM having 80.00%.
+
+The ROC and AUC data rise quickly, although having a small curve near the top of the Y-axis. Still very good performance.
+All models score high on the AUC, all passing the 98%. Meaning that all models have a great distinction between TNBC and non TNBC.
+
+The cross validation shows that all models score aroundd 95%, having a good representation of a practical outcome.
+Random Forest having 94.63%, SVM having 94.97% and Logistic Regression having the highest with 95.31%
+
+In conclusion, the LASSO feature selection method has some decent balanced outcome to all models, but Random Forest and Logistic Regression show the most promising results out of the 3 models.
+
+# Closing statement
+It seems that most feature selection methods have certain aspects that positively affects one model and negatively impacts another.Great examples are Automated and BORUTA.
+As such, most feature sets have a single model out performing the others. Like Literature with SVM, Automation with LR and BORUTA with RF.
+However there were 2 feature set where 2 or all 3 models seem to perform almost equally to the feature set.
+Like LASSO with RF and LR, but the Statistical feature set seemed to work well with all 3 the models looking at the statistics.
+In the end, the one with the best overall metrics was LASSO.
