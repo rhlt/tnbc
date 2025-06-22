@@ -1,4 +1,4 @@
-# 4. Implementations of Machine Learning models (TODO: Opschonen)
+# 5. Implementations of Machine Learning models
 
 ***Prerequisite:** Files with selected features named **patient_genes_[variant].csv** must be generated as described in **[Features](../Features)**.*
 
@@ -21,7 +21,7 @@ GENE_FILE_VARIANT = FeatureVariant.LITERATURE
 ```
 
 **NOTE**:
-The feature variants are mapped to the generated **pateient_genes_[variant].csv** files. As noted previously, ensure that the corresponding patient_genes files have been genarated before training or evaluating the model.
+The feature variants are mapped to the generated **patient_genes_[variant].csv** files. As noted previously, ensure that the corresponding patient_genes files have been genarated before training or evaluating the model.
 
 General data helper functions are declared in **DataHelpers.ipynb**.
 This includes but is not limited to:
@@ -233,8 +233,3 @@ Random Forest (wit SMOTE)
 | Boruta      | 0.9733  (3rd)    |
 | Automated   | 0.9797  (1st)    |
 | RFE         | 0.9768  (2nd)    |
-
-## Suggestions for improvement ***[TODO IF TIME PERMITS]***
-
-- ~~Apply SMOTE to remove the imbalance **(moet hier want SMOTE moet alleen op de testdata, dus na de split!)**~~
-- ~~Train more (different types of) models, e.g. XGBoost~~

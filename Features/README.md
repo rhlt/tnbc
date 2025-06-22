@@ -1,10 +1,10 @@
-# 3. Feature Selection: selecting genes using different methods
+# 4. Feature Selection: selecting genes using different methods
 
-***Prerequisite:** Preprocessed clinical data must be available in **clinical.csv** as described in **[Preprocessing](../Preprocessing)**.*
+***Prerequisite:** Preprocessed data must be available in **geneDataPreProcessed.csv** as described in **[Preprocessing](../Preprocessing)**.*
 
 The Jupyter Notebooks in this folder will extract the the selected features from the RNA Seq files and combine them with the labeled clinical data with the following process:
 
-- Load the preprocessed Clinical Datafile as a Pandas dataframe, keeping only the case ID, TNBC label, and linked RNA Seq filename;
+- Load the preprocessed datafile as a Pandas dataframe, keeping only the case ID, TNBC label, and linked RNA Seq filename;
 - Determine the features to be selected (based on literature, statistical analysis or automated dimensionality reduction, depending on notebook);
 - Extract the selected features from the RNA Seq files and add these to the labeled clinical dataframe.
 - Add the matched files to the clinical dataframe, dropping cases where no RNA Seq file is available;
@@ -33,7 +33,4 @@ The RNA Seq files contain gene expression data for 60,000 genes, each of which h
 It seems that using the raw feature set is unreliable, showing unstable recall and precision likely due to overfitting (the so-called "curse of dimensionality"). Using literature based features gives a much more stable result and better performance. Furthermore, PCA offers more variable results than literature, though not quite as much as raw data. Also, use of principle components rather than genes directly makes explainability significantly more difficult.
 
 This suggests that the selection of genes based on literature is the best way to move forward.
-
-## Suggestions for improvement
-- Different feature-sets
 

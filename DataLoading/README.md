@@ -1,4 +1,4 @@
-# 2. Preprocessing: Classification and Filtering of clinical data
+# 2. Data Loading: Classification and Filtering of clinical data
 
 ***Prerequisite:** Data files (Clinical and RNA sequencing) must have been downloaded as described in **[Data](../Data)**.*
 
@@ -17,7 +17,7 @@ dataPath = '../Data'
 df = pd.read_csv(os.path.join(dataPath, 'clinical.csv'))
 ```
 
-***Next step:*** Jupyter Notebooks that parse the clinical data, select features using different methods, and link them from all RNA Seq files, can be found in the **[Features](../Features)** folder that lives next to this Preprocessing folder.
+***Next step:*** A Jupyter Notebook that scales and standardises the gene expression data, can be found in the **[Preprocessing](../Preprocessing)** folder that lives next to this DataLoading folder.
 
 
 ## Key findings

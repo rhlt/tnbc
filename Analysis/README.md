@@ -1,4 +1,4 @@
-# Analysis of the feature selection and model results
+# 7. Analysis of the feature selection and model results
 
 This document will cover the results of the feature selection methodes used to discover which genes will have the best data to be used for the models.
 

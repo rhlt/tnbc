@@ -19,12 +19,13 @@ Below is a list of steps of the workflow that we have implemented. All steps (ex
 
 1. **[Data acquisition](./Data)**: Case data from the TCGA-BRCA project should go in the **Data** folder. See the README in that folder for instructions on how to acquire the data;
 2. **[Data loading](./DataLoading)**: Cleaning, filtering, and classification (label generation) of the data is done in the **DataLoading** folder. This also links the clinical data to the correct RNA-seq files.
-3. **[Preprocessing](./Preprocessing)**: Features (genes) will be selected based on literature and other methods in the **Preprocessing** folder.
-4. **[Model development](./Model)**: Different models are trained in the **Model** folder.
-5. **[Model evaluation](./Evaluation)**: Visualizations of evaluation metrics are generated in the **Evaluation** folder.
-6. **[Interpretability and fairness analysis](./Analysis)**: The results from our interpretability and fairness analysis can be found in the **Analysis** folder.
-7. **Documentation and reporting**: The final report, as well as the original proposal, can be found in the top folder (here).
+3. **[Preprocessing](./Preprocessing)**: Gene expression data is scaled and standardised in the **Preprocessing** folder.
+4. **[Features](./Features)**: Features (genes) will be selected based on literature and other methods in the **Features** folder.
+5. **[Model development](./Model)**: Different models are trained in the **Model** folder.
+6. **[Model evaluation](./Evaluation)**: Performence of the trained models is evaluated in the **Evaluation** folder.
+7. **[Interpretability and fairness analysis](./Analysis)**: The results from our interpretability and fairness analysis can be found in the **Analysis** folder.
+8. **Documentation and reporting**: The final report, as well as the original proposal, can be found in the top folder (here).
 
-## Process and results
+## Full process and results
 
 The whole process and all results are documented in the final report that is included in this repository. In summary, the best performing model from our tests was a Random Forest using features selected via LASSO. It achieved a precision of 75.86%, recall of 95.65%, and F1-score of 84.62%. Additional explainability was achieved by applying LIME and SHAP.
