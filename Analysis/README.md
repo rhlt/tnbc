@@ -44,9 +44,9 @@ If this feature selection were to be used, Support Vector Machine would be the b
 # Automated
 From the automated method of selecting genes, by using the PCA method, we transform the data and by selecting the most variating data, a new feature set is made. Officially this is not feature selection, but it will automatically help look for variables that impact the data.
 
-![Platform](./images/automated_general__plot.png")
-![Platform](./images/automated_roc_auc_plot.png")
-![Platform](./images/automated_cross_validation_plot.png")
+![Platform](./images/automated_general__plot.png)
+![Platform](./images/automated_roc_auc_plot.png)
+![Platform](./images/automated_cross_validation_plot.png)
 
 The accuracy of the models is pretty high, but Random Forest stands out for having a near 4% drop in performance compared to SVM. 90.31% compared to the others 94.39% and 96.43%, giving it quite the set back. The mostlikely cause is that because of the small pool of data and the lowered number of features created by the PCA. As Random Forest works better with structured data to create desicion trees, PCA restructures the original data that cannot be effectively used by the model.
 
@@ -62,9 +62,9 @@ In conclusion, Logistical Regression is the best model for the automated feature
 # Statistical
 By conduction various checks to the correlation of the genes, features are being selected via statistics. This way the data is as normalized as possible and also have selected the most impactful and variable data.
 
-![Platform](./images/statistical_general__plot.png")
-![Platform](./images/statistical_roc_auc_plot.png")
-![Platform](./images/statistical_cross_validation_plot.png")
+![Platform](./images/statistical_general__plot.png)
+![Platform](./images/statistical_roc_auc_plot.png)
+![Platform](./images/statistical_cross_validation_plot.png)
 
 In terms of Accuracy, all models are very close, with Logistical Regression leading with 95.41%.
 Looking at the Presicion, shares the same closeness as with the Accuracy, being between 74% and 79%. With LR having the highest again. Probably because variation plays a big role in the selection again, just like PCA. As mentioned above it will benefit the model.
@@ -82,9 +82,9 @@ Complementing to this is the high Cross Validation scores, estimating the reliab
 # BORUTA
 This feature selection method works by identifying relevant existing features and comparing them to randomly generated 'shadow' features. These are randomly generated features, which are then put to a model (usually Random Forest) to determine which features have high relevance.
 
-![Platform](./images/boruta_metrics.svg")
-![Platform](./images/boruta_ROC.svg")
-![Platform](./images/boruta_5fold.svg")
+![Platform](./images/boruta_metrics.svg)
+![Platform](./images/boruta_ROC.svg)
+![Platform](./images/boruta_5fold.svg)
 
 Looking at the Precision data, there are significant differences in performance. With Random Forest having the highest (75.86%), SVM having 70.00% and Logistic Regression having 65.52%. It seems Logistic Regression has trouble with this feature set, with the probable cause being a high correlation in the data.
 
@@ -100,9 +100,9 @@ But for the other models the results seem decent as SVM's results are average, b
 # LASSO
 This feature selection, also known as L1 regularization, is an automated feature selection that selects the most relevant features by shrinking the coefficients of less important features to 0, basically removing them from the selection. It simplifies the model, prevents overfitting and improves interperability.
 
-![Platform](./images/lasso_metrics.svg")
-![Platform](./images/lasso_ROC.svg")
-![Platform](./images/lasso_5fold.svg")
+![Platform](./images/lasso_metrics.svg)
+![Platform](./images/lasso_ROC.svg)
+![Platform](./images/lasso_5fold.svg)
 
 Looking at the Precision scores, they mostly score above the 75%, with Logistic Regression leading with 80.00%.
 In contrast for Recall, Random Forest scores the highest with 95.65%, meaning although the accuracy is the lowest, it has the highest rate of True Positive captures. With SVM and Logistic Regression having a tie at 86.96%.
