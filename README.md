@@ -23,7 +23,7 @@ Below is a list of steps of the workflow that we have implemented. All steps (ex
 4. **[Features](./Features)**: Features (genes) will be selected based on literature and other methods in the **Features** folder.
 5. **[Model development](./Model)**: Different models are trained in the **Model** folder.
 6. **[Model evaluation](./Evaluation)**: Performence of the trained models is evaluated in the **Evaluation** folder.
-7. **[Interpretability and fairness analysis](./Analysis)**: The results from our interpretability and fairness analysis can be found in the **Analysis** folder.
+7. **[Model analysis](./Analysis)**: The results from our analysis of the different models and methods we applied, which was used to select the best performing model, can be found in the **Analysis** folder.
 8. **Documentation and reporting**: The final report, as well as the original proposal, can be found in the top folder (here).
 
 ## Full process and results
