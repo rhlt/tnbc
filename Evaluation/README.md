@@ -1,4 +1,4 @@
-# 5. Evaluation of models
+# 6. Evaluation of models
 
 ***Prerequisite:** Files with model output and model metrics named **model_output_[variant].csv** and **model_metrics_[variant].csv**, for all model variants to be evaluated, must be generated as described in **[Model](../Model)**.*
 
